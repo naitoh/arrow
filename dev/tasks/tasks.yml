@@ -1680,13 +1680,13 @@ tasks:
       run:
         - ubuntu-cpp
 
-  test-fedora-30-cpp:
+  test-fedora-31-cpp:
     ci: github
     platform: linux
     template: docker-tests/github.linux.yml
     params:
       env:
-        FEDORA: 30
+        FEDORA: 31
       build:
         - fedora-cpp
       run:
@@ -1833,13 +1833,13 @@ tasks:
       run:
         - ubuntu-python
 
-  test-fedora-30-python-3:
+  test-fedora-31-python-3:
     ci: azure
     platform: linux
     template: docker-tests/azure.linux.yml
     params:
       env:
-        FEDORA: 30
+        FEDORA: 31
       build:
         - fedora-cpp
         - fedora-python

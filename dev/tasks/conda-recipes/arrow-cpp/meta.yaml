@@ -29,8 +29,8 @@ requirements:
     - glog
     - grpc-cpp
     - libprotobuf
-    - clangdev 8.*
-    - llvmdev 8.*
+    - clangdev 9.*
+    - llvmdev 9.*
     - lz4-c
     - numpy 1.16.*
     - orc  # [unix]

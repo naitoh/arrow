@@ -221,9 +221,9 @@ def build(ctx, src, build_dir, force, targets, **kwargs):
     Examples:
 
     \b
-    # Initialize build with clang8 and avx2 support in directory `clang8-build`
+    # Initialize build with clang9 and avx2 support in directory `clang9-build`
     \b
-    archery build --cc=clang-8 --cxx=clang++-8 --cxx-flags=-mavx2 clang8-build
+    archery build --cc=clang-9 --cxx=clang++-9 --cxx-flags=-mavx2 clang9-build
 
     \b
     # Builds and run test
@@ -493,7 +493,7 @@ def benchmark_diff(ctx, src, preserve, output, cmake_extras,
     archery benchmark diff master "$LAST"
 
     \b
-    # Compare g++7 (contender) with clang++-8 (baseline) builds
+    # Compare g++7 (contender) with clang++-9 (baseline) builds
     \b
     archery build --with-benchmarks=true \\
             --cxx-flags=-ftree-vectorize \\
@@ -501,9 +501,9 @@ def benchmark_diff(ctx, src, preserve, output, cmake_extras,
     \b
     archery build --with-benchmarks=true \\
             --cxx-flags=-flax-vector-conversions \\
-            --cc=clang-8 --cxx=clang++-8 clang8-build
+            --cc=clang-9 --cxx=clang++-9 clang9-build
     \b
-    archery benchmark diff gcc7-build clang8-build
+    archery benchmark diff gcc7-build clang9-build
 
     \b
     # Compare default targets but scoped to the suites matching

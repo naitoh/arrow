@@ -85,7 +85,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        fedora: [30]
+        fedora: [31]
     env:
       FEDORA: ${{ matrix.fedora }}
     steps:

@@ -29,8 +29,8 @@ RUN dnf update -y && \
         clang-devel \
         cmake \
         flatbuffers-devel \
-        java-openjdk-devel \
-        java-openjdk-headless \
+        java-latest-openjdk-devel \
+        java-latest-openjdk-headless \
         gcc \
         gcc-c++ \
         glog-devel \

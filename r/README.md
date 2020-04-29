@@ -174,11 +174,11 @@ Fix any style issues before committing with
 
     ./lint.sh --fix
 
-The lint script requires Python 3 and `clang-format-8`. If the command
+The lint script requires Python 3 and `clang-format-9`. If the command
 isn’t found, you can explicitly provide the path to it like
-`CLANG_FORMAT=$(which clang-format-8) ./lint.sh`. On macOS, you can get
+`CLANG_FORMAT=$(which clang-format-9) ./lint.sh`. On macOS, you can get
 this by installing LLVM via Homebrew and running the script as
-`CLANG_FORMAT=$(brew --prefix llvm@8)/bin/clang-format ./lint.sh`
+`CLANG_FORMAT=$(brew --prefix llvm@9)/bin/clang-format ./lint.sh`
 
 ### Useful functions
 

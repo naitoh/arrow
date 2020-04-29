@@ -18,14 +18,24 @@
 ARG arch=amd64
 FROM ${arch}/debian:10
 
-ENV DEBIAN_FRONTEND noninteractive
+# pipefail is enabled for proper error detection in the `wget | apt-key add`
+# step
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN \
-  echo "deb http://deb.debian.org/debian buster-backports main" > \
-    /etc/apt/sources.list.d/backports.list
+ENV DEBIAN_FRONTEND noninteractive
 
 ARG llvm
 RUN apt-get update -y -q && \
+    apt-get install -y -q --no-install-recommends \
+      lsb-release \
+      gnupg \
+      software-properties-common \
+      wget && \
+    code_name=$(lsb_release --codename --short) && \
+    wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
+    apt-add-repository -y \
+      "deb https://apt.llvm.org/${code_name}/ llvm-toolchain-${code_name}-${llvm} main" && \
+    apt-get update -y -q && \
     apt-get install -y -q --no-install-recommends \
         autoconf \
         ca-certificates \
@@ -58,8 +68,7 @@ RUN apt-get update -y -q && \
         protobuf-compiler \
         rapidjson-dev \
         tzdata \
-        zlib1g-dev \
-        wget && \
+        zlib1g-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 

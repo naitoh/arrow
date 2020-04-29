@@ -60,6 +60,7 @@ FunctionSignature ExpressionRegistry::FunctionSignatureIterator::operator*() {
   return *func_sig_it_;
 }
 
+// clang-format off
 ExpressionRegistry::func_sig_iterator_type ExpressionRegistry::FunctionSignatureIterator::
 operator++(int increment) {
   ++func_sig_it_;
@@ -74,6 +75,7 @@ operator++(int increment) {
   }
   return func_sig_it_;
 }
+// clang-format on
 
 DataTypeVector ExpressionRegistry::supported_types_ =
     ExpressionRegistry::InitSupportedTypes();

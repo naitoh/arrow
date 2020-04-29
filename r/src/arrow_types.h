@@ -17,12 +17,12 @@
 
 #pragma once
 
+#include <RcppCommon.h>
+
 #include <limits>
 #include <memory>
 #include <utility>
 #include <vector>
-
-#include <RcppCommon.h>
 #undef Free
 
 namespace arrow {
